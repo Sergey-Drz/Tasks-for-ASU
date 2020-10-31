@@ -1,0 +1,47 @@
+using System;
+
+namespace Employee
+{
+    class Employee
+    {
+        string name;        // Имя
+        string surname;     // Фамилия
+        string patronymic;  // Отчество
+        string position;    // Должность
+        string department;  // Отдел
+        double salary;      // Оклад
+
+        public Employee(string a_name, string a_surname, string a_patronymic, string a_position, string a_department, double a_salary)
+        {
+            // Метод инициализации свойст объекта
+            name = a_name;
+            surname = a_surname;
+            patronymic = a_patronymic;
+            position = a_position;
+            department = a_department;
+            salary = a_salary;
+        }
+        public void InfoToConsole()
+        {
+            // Метод вывода информации в консоль
+            Console.WriteLine("Информация о сотруднике " + surname + " " + name + " " + patronymic + ":");
+            Console.WriteLine("Отдел: " + department);
+            Console.WriteLine("Должность: " + position);
+            Console.WriteLine("Оклад: " + Convert.ToString(salary));
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Employee Name1 = new Employee("Иван", "Иванов", "Иванович", "Менеджер", "Отдел продаж", 20000.00);// Создание объекта класса
+            Employee Name2 = new Employee("Петр", "Петров", "Петрович", "Руководитель", "Отдел инженерной инфраструктуры", 65000.00);// Создание объекта класса
+
+            Name1.InfoToConsole();//Вывод в консоль
+            Name2.InfoToConsole();//Вывод в консоль
+
+            Console.ReadKey();
+        }
+    }
+}
