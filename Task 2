@@ -1,0 +1,27 @@
+using System;
+
+namespace Employee
+{
+    class Point {
+        public int x; //x
+        public int y; //y
+        public int z; //z
+        public Point() { x = 6; y = 12; z = 8; } // конструктор назначающий параметры по умолчанию
+        public Point(int a_x, int a_y, int a_z) { x = a_x; y = a_y; z = a_z; } // конструктор для ввода параметров
+        public double GetDistance(int v_x, int v_y, int v_z){
+            // Метод рассчета дистанции
+            double dist = Math.Sqrt(Math.Pow(v_x - x,2)+ Math.Pow(v_y - y, 2)+ Math.Pow(v_z - z, 2));
+            return (dist);
+        }
+    }
+    class Program{
+        static void Main()
+        {
+            Point A = new Point();
+            Point B = new Point(15, 4, 4); 
+            Console.WriteLine("Расстояние между точками: ");
+            Console.WriteLine(A.GetDistance(B.x, B.y, B.z)); 
+            Console.ReadKey();
+        }
+    }
+}
